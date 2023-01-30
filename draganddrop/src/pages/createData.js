@@ -7,32 +7,32 @@ class RegisterForm extends React.Component {
   constructor() {
     super();
     this.state = {
-        Title: "",
-        Description: "",
-        Status: "",
+      Title: "",
+      Description: "",
+      Status: "",
 
       formDisabled: false,
     };
   }
   handleFormSubmit(event) {
-    const {Title, Status, Description } = this.state;
-    
-    
+    const { Title, Status, Description } = this.state;
+
+
     this.setState({
       formDisabled: true,
     });
 
-   
-    if(Title===""){
+
+    if (Title === "") {
       alert("Title is Required")
-    }else if(Status===""){
+    } else if (Status === "") {
       alert("Status is Required")
-    }else if(Description===""){
+    } else if (Description === "") {
       alert("Description id Required")
-    }else{
-        axios
+    } else {
+      axios
         .post("http://localhost:3001/createProject", {
-            Title,Status,Description
+          Title, Status, Description
         })
         .then((response) => {
           console.log("response", response);
@@ -40,24 +40,24 @@ class RegisterForm extends React.Component {
             formDisabled: false,
           });
           this.setState({
-            phone:"",email:"",title:"", name:"", password:"",
+            phone: "", email: "", title: "", name: "", password: "",
           });
           alert("Registration Successful!");
 
           event.preventDefault();
           //window.location.href = "/"
-  
-  
-        }).catch((error)=>{
+
+
+        }).catch((error) => {
           alert(error.response.data.message)
-      });
+        });
 
 
-      
+
     }
 
 
-    
+
 
 
 
@@ -76,7 +76,7 @@ class RegisterForm extends React.Component {
         >
           <div className="mb-3">
             <label htmlFor="name" className="form-label">
-            Title
+              Title
             </label>
             <input
               type="text"
@@ -86,32 +86,32 @@ class RegisterForm extends React.Component {
               value={this.state.Title}
               onChange={(e) => {
                 this.setState({
-                    Title: e.target.value,
+                  Title: e.target.value,
                 });
               }}
             />
           </div>
           <div className="mb-3">
             <label htmlFor="title" className="form-label">
-            Status
+              Status
             </label>
-            <select 
-            
-            type="text"
-            className="form-control"
-            id="title"
-            placeholder="your Status"
-            value={this.state.Status}
-            onChange={(e) => {
-              this.setState({
-                Status: e.target.value,
-              });
-            }} 
+            <select
+
+              type="text"
+              className="form-control"
+              id="title"
+              placeholder="your Status"
+              value={this.state.Status}
+              onChange={(e) => {
+                this.setState({
+                  Status: e.target.value,
+                });
+              }}
             >
-                <option>select Status</option>
-                <option>Open</option>
-                <option>In-Progress</option>
-                <option>Completed</option>
+              <option>select Status</option>
+              <option>Open</option>
+              <option>In-Progress</option>
+              <option>Completed</option>
 
 
             </select>
@@ -119,7 +119,7 @@ class RegisterForm extends React.Component {
 
           <div className="mb-3">
             <label htmlFor="name" className="form-label">
-            Description
+              Description
             </label>
             <input
               type="text"
@@ -129,7 +129,7 @@ class RegisterForm extends React.Component {
               value={this.state.Description}
               onChange={(e) => {
                 this.setState({
-                    Description: e.target.value,
+                  Description: e.target.value,
                 });
               }}
             />
@@ -137,11 +137,11 @@ class RegisterForm extends React.Component {
 
 
 
-          
-          <button 
+
+          <button
             disabled={this.state.formDisabled}
             type="submit"
-            
+
           >
             Submit
           </button>
@@ -152,7 +152,7 @@ class RegisterForm extends React.Component {
         </form>
         <br />
         <br />
-        
+
       </div>
     );
   }
