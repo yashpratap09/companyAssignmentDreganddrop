@@ -3,6 +3,7 @@ import "./Home.css"
 
 const HomePage = () => (
     
+  <div className="home">
     <div className="yash">
       <h1> Home Page</h1>
      
@@ -13,6 +14,8 @@ const HomePage = () => (
         <a href="/getAllData">Click here to fetch all data</a>
       </div>
     </div>
+
+  </div>  
   );
   
   

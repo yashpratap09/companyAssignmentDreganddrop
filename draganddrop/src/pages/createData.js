@@ -16,7 +16,7 @@ class RegisterForm extends React.Component {
   }
   handleFormSubmit(event) {
     const {Title, Status, Description } = this.state;
-    event.preventDefault();
+    
     
     this.setState({
       formDisabled: true,
@@ -43,10 +43,14 @@ class RegisterForm extends React.Component {
             phone:"",email:"",title:"", name:"", password:"",
           });
           alert("Registration Successful!");
+
+          event.preventDefault();
           //window.location.href = "/"
   
   
-        });
+        }).catch((error)=>{
+          alert(error.response.data.message)
+      });
 
 
       
