@@ -21,8 +21,11 @@ const GetAllData = () => {
 
     }, []);
 
+
+
     const dragStarted = (e, id) => {
-        console.log("Started")
+       // console.log("Started")
+      // console.log(id.Title)
         e.dataTransfer.setData("Title", id.Title)
         console.log(id)
 
@@ -48,7 +51,7 @@ const GetAllData = () => {
             }).then((response) => {
                 window.location.href = "/GetAllData"
                 //    e.preventDefault();
-                console.log("response", response)
+                //console.log("response", response)
 
             }).catch((error) => {
                 alert(error.response.data.message)
@@ -127,7 +130,8 @@ const GetAllData = () => {
                 <div className="container">
 
                     <div className="todos_wrapper">
-                        <div className="todos_list">
+                        <div className="todos_list" style={{background:"rgb(245, 245, 128)"}} onDrop={(e) => dragDropped1(e)} onDragOver={(e) =>
+                                                draggingOver(e)}>
                             <h3 className="todo_title">Open</h3>
 
                             {Task.map((data, index) => {
@@ -136,9 +140,8 @@ const GetAllData = () => {
                                     if (Status === "Open") {
                                         return (
 
-                                            <div className="column1" key={index} droppable="true" draggable onDragStart={(e) => dragStarted(e, { Title })} onDragOver={(e) =>
-                                                draggingOver(e)}
-                                                onDrop={(e) => dragDropped1(e)}>
+                                            <div className="column1" key={index} droppable="true" draggable onDragStart={(e) => dragStarted(e, { Title })} 
+                                                >
                                                 <h4>Title:-  {Title}</h4>
                                                 <h6>Description:-    {Description}</h6>
                                                 <p>Status:- {Status}</p>
@@ -154,7 +157,8 @@ const GetAllData = () => {
 
 
                         </div>
-                        <div className="todos_list">
+                        <div className="todos_list" style={{background:"rgb(245, 245, 128)"}}  onDrop={(e) => dragDropped2(e)} onDragOver={(e) =>
+                                                draggingOver(e)}>
                             <h3 className="todo_title">InProgress</h3>
                             {Task.map((data, index) => {
                                 const { Title, Status, Description } = data;
@@ -162,9 +166,8 @@ const GetAllData = () => {
                                     if (Status === "In-Progress") {
                                         return (
 
-                                            <div className="column1" key={index} droppable="true" draggable onDragStart={(e) => dragStarted(e, { Title })} onDragOver={(e) =>
-                                                draggingOver(e)}
-                                                onDrop={(e) => dragDropped2(e)}>
+                                            <div className="column1" key={index} droppable="true" draggable onDragStart={(e) => dragStarted(e, { Title })} 
+                                               >
                                                 <h4>Title:-  {Title}</h4>
                                                 <h6>Description:-    {Description}</h6>
                                                 <p>Status:- {Status}</p>
@@ -180,7 +183,8 @@ const GetAllData = () => {
 
 
                         </div>
-                        <div className="todos_list">
+                        <div className="todos_list" style={{background:"rgb(245, 245, 128)"}}  onDrop={(e) => dragDropped3(e)} onDragOver={(e) =>
+                                                draggingOver(e)}>
                             <h3 className="todo_title">Completed</h3>
 
                             {Task.map((data, index) => {
@@ -189,9 +193,8 @@ const GetAllData = () => {
                                     if (Status === "Completed") {
                                         return (
 
-                                            <div className="column1" key={index} droppable="true" draggable onDragStart={(e) => dragStarted(e, { Title })} onDragOver={(e) =>
-                                                draggingOver(e)}
-                                                onDrop={(e) => dragDropped3(e)}>
+                                            <div className="column1" key={index} droppable="true" draggable onDragStart={(e) => dragStarted(e, { Title })} 
+                                               >
                                                 <h4>Title:-  {Title}</h4>
                                                 <h6>Description:-    {Description}</h6>
                                                 <p>Status:- {Status}</p>

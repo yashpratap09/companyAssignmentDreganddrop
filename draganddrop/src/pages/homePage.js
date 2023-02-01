@@ -8,10 +8,10 @@ const HomePage = () => (
       <h1> Home Page</h1>
 
       <div className="box">
-        <a href="/createData">Click here to add project details</a>
+        <a className="an" href="/createData">Click here to add project details</a>
       </div>
       <div className="box">
-        <a href="/getAllData">Click here to fetch all data</a>
+        <a className="an" href="/getAllData">Click here to fetch all data</a>
       </div>
     </div>
 
