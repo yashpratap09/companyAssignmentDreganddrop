@@ -129,10 +129,17 @@ const GetAllData = () => {
             <div className="App">
                 <div className="container">
 
+                    <div className="bar">
+                        <h3>Open</h3>
+                        <h3>InProgress</h3>
+                        <h3>Completed</h3>
+                    </div>
+
                     <div className="todos_wrapper">
+
                         <div className="todos_list" style={{background:"rgb(245, 245, 128)"}} onDrop={(e) => dragDropped1(e)} onDragOver={(e) =>
                                                 draggingOver(e)}>
-                            <h3 className="todo_title">Open</h3>
+                            <h3 className="todo_title"></h3>
 
                             {Task.map((data, index) => {
                                 const { Title, Status, Description } = data;
@@ -159,7 +166,7 @@ const GetAllData = () => {
                         </div>
                         <div className="todos_list" style={{background:"rgb(245, 245, 128)"}}  onDrop={(e) => dragDropped2(e)} onDragOver={(e) =>
                                                 draggingOver(e)}>
-                            <h3 className="todo_title">InProgress</h3>
+                            <h3 className="todo_title"></h3>
                             {Task.map((data, index) => {
                                 const { Title, Status, Description } = data;
                                 {
@@ -185,7 +192,7 @@ const GetAllData = () => {
                         </div>
                         <div className="todos_list" style={{background:"rgb(245, 245, 128)"}}  onDrop={(e) => dragDropped3(e)} onDragOver={(e) =>
                                                 draggingOver(e)}>
-                            <h3 className="todo_title">Completed</h3>
+                            <h3 className="todo_title"></h3>
 
                             {Task.map((data, index) => {
                                 const { Title, Status, Description } = data;
