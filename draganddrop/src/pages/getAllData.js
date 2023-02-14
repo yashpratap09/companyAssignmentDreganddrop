@@ -12,7 +12,7 @@ const GetAllData = () => {
 
     useEffect(() => {
 
-        axios.get("http://localhost:3001/getData").then((Response) => {
+        axios.get("https://draganddrop-j8t4.onrender.com/getData").then((Response) => {
 
             setTask(Response.data.data)
         }).catch((error) => {
@@ -46,7 +46,7 @@ const GetAllData = () => {
         // console.log(Status)
 
         axios
-            .put("http://localhost:3001/updateData", {
+            .put("https://draganddrop-j8t4.onrender.com/updateData", {
                 Title, Status
             }).then((response) => {
                 window.location.href = "/GetAllData"
@@ -72,7 +72,7 @@ const GetAllData = () => {
         //   console.log(Status)
 
         axios
-            .put("http://localhost:3001/updateData", {
+            .put("https://draganddrop-j8t4.onrender.com/updateData", {
                 Title, Status
 
 
@@ -101,7 +101,7 @@ const GetAllData = () => {
         //   console.log(Status)
 
         axios
-            .put("http://localhost:3001/updateData", {
+            .put("https://draganddrop-j8t4.onrender.com/updateData", {
                 Title, Status
 
 
